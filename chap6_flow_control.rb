@@ -2,17 +2,17 @@
 
 # prints out the lyrics to that beloved classic: "99 Bottles of Beer on the Wall."
 
-#bottles_of_beer = 99
+bottles_of_beer = 99
 
-#while bottles_of_beer >= 1
-  #puts "#{bottles_of_beer} bottle(s) of beer on the wall, #{bottles_of_beer} bottle(s) of beer."
-  #puts "Take one down and pass it around, #{bottles_of_beer -= 1} bottle(s) of beer on the wall."
-  #bottles_of_beer -= 1
-  #sleep(0.5)
-#end
+while bottles_of_beer >= 1
+  puts "#{bottles_of_beer} bottle(s) of beer on the wall, #{bottles_of_beer} bottle(s) of beer."
+  puts "Take one down and pass it around, #{bottles_of_beer -= 1} bottle(s) of beer on the wall."
+  bottles_of_beer -= 1
+  sleep(0.5)
+end
 
-#puts "No more bottles of beer on the wall, no more bottles of beer."
-#puts "Go to the store and buy some more, 99 bottles of beer on the wall."
+puts "No more bottles of beer on the wall, no more bottles of beer."
+puts "Go to the store and buy some more, 99 bottles of beer on the wall."
 
 # whatever you say to grandma (whatever you type in), she should respond with
 # HUH?!  SPEAK UP, SONNY!, unless you shout it (type in all capitals).
@@ -41,3 +41,15 @@ puts "OK, BYE, SONNY!"
 # also leap years). Leap years are years divisible by four (like 1984 and 2004).
 # However, years divisible by 100 are not leap years (such as 1800 and 1900)
 # unless they are divisible by 400 (like 1600 and 2000, which were in fact leap years).
+
+puts "Let's find the leap years. Pick a starting year."
+starting = gets.chomp.to_i
+puts "Pick an ending year."
+ending = gets.chomp.to_i
+puts "These are your leap years:"
+
+(starting...ending).each do |year|
+  if (year % 400 == 0) || (year % 100 != 0 && year % 4 == 0)
+    puts year
+  end
+end
