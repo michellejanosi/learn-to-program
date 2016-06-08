@@ -4,7 +4,7 @@
 # until we just press Enter on an empty line), and which then repeats the words
 # back to us in alphabetical order.
 
-puts "Type as many words as you want, one word per line."
+puts "Type as many words as you want, each on a new line, and enter a blank line to quit"
 words = []
 
 while true
@@ -56,3 +56,27 @@ end
 
 puts "Great! Here are your words sorted:"
 puts words2
+
+# rewrite the Table of Contents program (from the chapter on methods).
+# Start the program with an array holding all of the information for the
+# Table of Contents (chapter names, page numbers, etc.). Print out the
+# information from the array in a formatted Table of Contents.
+
+title = "Table of Contents"
+chapters = [["Getting Started", 1],
+            ["Numbers", 9],
+            ["Letters", 13]]
+
+puts title.center(50)
+puts
+chap_num = 1
+chapters.each do |chap|
+  name = chap[0]
+  page = chap[1]
+
+  starting = "Chapter #{chap_num} #{name}"
+  ending = "page #{page}"
+
+  puts starting.ljust(30) + ending.rjust(20)
+  chap_num = chap_num + 1
+end
